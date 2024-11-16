@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean class = "BeanViaXML.Address" id="address" init-method="beanInit" destroy-method="beanDestroy"> <!-- this will call the default constructor of Address class. Default type is singleton -->
+        <property name="sNum" value="1"/> <!-- this will call setter methods -->
+        <property name="city" value="lucknow"/>
+    </bean>
+
+    <bean class="BeanViaXML.Student" id="student" > <!-- this will call the default constructor of Student class -->
+        <property name="name" value="ayush"/>
+        <property name="address" ref="address"/>
+    </bean>
+
+</beans>
